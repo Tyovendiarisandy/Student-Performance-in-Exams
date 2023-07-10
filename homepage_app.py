@@ -22,7 +22,7 @@ def main():
     # choose menu input - Selectbox
     # st.sidebar.subheader('Select Your Input')
     gender = st.selectbox('Select Your Gender!', df['gender'].unique())
-    race = st.selectbox('Select Your Race or Ethnicity!', df['race/ethnicity'].unique())
+    race/ethnicity = st.selectbox('Select Your Race or Ethnicity!', df['race/ethnicity'].unique())
     parental_level_of_education = st.selectbox("Select Your Parent's Level of Education!", df['parental_level_of_education'].unique())
     lunch = st.selectbox('Select Your Lunch Type!', df['lunch'].unique())
     test_preparation_course = st.selectbox('Select Your Status Test Preparation Course!', df['test_preparation_course'].unique())
@@ -31,22 +31,22 @@ def main():
     st.subheader('Select Your Exams Score!')
     
     # choose menu input - selectbox for symptoms
-    math = st.slider('What is Your Math Score?', min_value=0, max_value=100)
-    reading = st.slider('What is Your Reading Score?', min_value=0, max_value=100)
-    writing = st.slider('What is Your Writing Score?', min_value=0, max_value=100),
+    math_score = st.slider('What is Your Math Score?', min_value=0, max_value=100)
+    reading_score = st.slider('What is Your Reading Score?', min_value=0, max_value=100)
+    writing_score = st.slider('What is Your Writing Score?', min_value=0, max_value=100),
 
     # prediction - button for predict
     if st.button('Predict'):
     # input the data in dataframe
         input_data = pd.DataFrame({
         'gender': [gender],
-        'race/etnicity': [race],
+        'race/etnicity': [race/ethnicity],
         'parental_level_of_education': [parental_level_of_education],
         'lunch': [lunch],
         'test_preparation_course': [test_preparation_course],
-        'math_score': [math],
-        'reading_score': [reading],
-        'writing_score': [writing]
+        'math_score': [math_score],
+        'reading_score': [reading_score],
+        'writing_score': [writing_score]
         })
 
         # do predict with model
