@@ -23,9 +23,9 @@ def main():
     # st.sidebar.subheader('Select Your Input')
     gender = st.selectbox('Select Your Gender!', df['gender'].unique())
     race = st.selectbox('Select Your Race or Ethnicity!', df['race/ethnicity'].unique())
-    parental_education = st.selectbox("Select Your Parent's Level of Education!", df['parental_level_of_education'].unique())
+    parental_level_of_education = st.selectbox("Select Your Parent's Level of Education!", df['parental_level_of_education'].unique())
     lunch = st.selectbox('Select Your Lunch Type!', df['lunch'].unique())
-    preparation_course = st.selectbox('Select Your Status Test Preparation Course!', df['test_preparation_course'].unique())
+    test_preparation_course = st.selectbox('Select Your Status Test Preparation Course!', df['test_preparation_course'].unique())
 
     # subtitle for symptoms
     st.subheader('Select Your Exams Score!')
@@ -40,13 +40,13 @@ def main():
     # input the data in dataframe
         input_data = pd.DataFrame({
         'gender': [gender],
-        'race': [race],
-        'parental_education': [parental_education],
+        'race/etnicity': [race],
+        'parental_level_of_education': [parental_level_of_education],
         'lunch': [lunch],
-        'preparation_course': [preparation_course],
-        'math': [math],
-        'reading': [reading],
-        'writing': [writing]
+        'test_preparation_course': [test_preparation_course],
+        'math_score': [math],
+        'reading_score': [reading],
+        'writing_score': [writing]
         })
 
         # do predict with model
