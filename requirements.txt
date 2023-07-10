@@ -5,4 +5,5 @@ seaborn==0.12.2
 scikit-learn==1.2.2
 streamlit==1.23.0
 imbalanced-learn==0.10.1
-category_encoders
+xgboost==1.7.6
+category_encoders==2.6.1
