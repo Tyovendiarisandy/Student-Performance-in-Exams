@@ -36,7 +36,11 @@ def main():
     writing_score = st.slider('What is Your Writing Score?', min_value=0, max_value=100)
 
     # prediction - button for predict
-    if st.markdown('<button style="background-color:red; border-color:red; color:white">Predict</button>'):
+    if st.markdown("""<style>
+                        .css-1vq1dvn.ekwmvhn0 button {background-color: red;color: white;}
+                        .css-1vq1dvn.ekwmvhn0 button::before {content: "Predict";}</style>""",
+                        unsafe_allow_html=True):
+                            
     # input the data in dataframe
         input_data = pd.DataFrame({
         'gender': [gender],
@@ -48,8 +52,6 @@ def main():
         'reading_score': [reading_score],
         'writing_score': [writing_score]
         })
-
-        st.markdown("""<style>.stSuccess {background-color: red;}.stSuccess span {color: white;}</style>""",unsafe_allow_html=True)
         
         # do predict with model
         prediction = model.predict(input_data)
