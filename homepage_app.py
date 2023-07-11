@@ -54,9 +54,9 @@ def main():
 
         st.subheader('Prediction Result')
         if prediction[0] == 0:
-            st.markdown('<span style="color:red; background-color:grey">You Didn\'t The SAT Test!</span>', unsafe_allow_html=True)
+            st.markdown('<span style="color:red; background-color:#f9f9f9">You Didn\'t The SAT Test!</span>', unsafe_allow_html=True)
         else:
-            st.markdown('<span style="color:green; background-color:grey">You Passed The SAT Test!</span>', unsafe_allow_html=True)
+            st.markdown('<span style="color:green; background-color:#f9f9f9">You Passed The SAT Test!</span>', unsafe_allow_html=True)
     
     st.write('----')
     st.write('''
