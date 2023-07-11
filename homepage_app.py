@@ -36,7 +36,7 @@ def main():
     writing_score = st.slider('What is Your Writing Score?', min_value=0, max_value=100)
 
     # prediction - button for predict
-    if st.button('Predict', color=red):
+    if st.button('Predict'):
     # input the data in dataframe
         input_data = pd.DataFrame({
         'gender': [gender],
