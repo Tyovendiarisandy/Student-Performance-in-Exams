@@ -48,15 +48,18 @@ def main():
         'reading_score': [reading_score],
         'writing_score': [writing_score]
         })
-        
+
+
         # do predict with model
         prediction = model.predict(input_data)
 
         st.subheader('Prediction Result')
         if prediction[0] == 0:
-            st.markdown('<span style="color:red; background-color:#f9f9f9">You Didn\'t The SAT Test!</span>', unsafe_allow_html=True)
+            st.markdown("""<style>.stSuccess {background-color: red;}
+                                  .stSuccess You Didn\'t The SAT Test! {color: white;}</style>""",unsafe_allow_html=True)
         else:
-            st.markdown('<span style="color:green; background-color:#f9f9f9">You Passed The SAT Test!</span>', unsafe_allow_html=True)
+            st.markdown("""<style>.stSuccess {background-color: green;}
+                                  .stSuccess You Passed The SAT Test! {color: white;}</style>""",unsafe_allow_html=True)
     
     st.write('----')
     st.write('''
