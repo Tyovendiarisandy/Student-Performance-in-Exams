@@ -49,17 +49,16 @@ def main():
         'writing_score': [writing_score]
         })
 
-
+        st.markdown("""<style>.stSuccess {background-color: red;}.stSuccess span {color: white;}</style>""",unsafe_allow_html=True)
+        
         # do predict with model
         prediction = model.predict(input_data)
 
         st.subheader('Prediction Result')
         if prediction[0] == 0:
-            st.markdown("""<style>.stSuccess {background-color: red;}
-                                  .stSuccess You Didn\'t The SAT Test! {color: white;}</style>""",unsafe_allow_html=True)
+            st.success("You Didn't Pass The SAT Test!")
         else:
-            st.markdown("""<style>.stSuccess {background-color: green;}
-                                  .stSuccess You Passed The SAT Test! {color: white;}</style>""",unsafe_allow_html=True)
+            st.success("You Passed The SAT Test!")
     
     st.write('----')
     st.write('''
