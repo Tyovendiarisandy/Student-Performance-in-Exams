@@ -48,7 +48,16 @@ def main():
         'reading_score': [reading_score],
         'writing_score': [writing_score]
         })
-
+    st.markdown(
+    """
+    <style>
+    .css-1l02zno button {
+        background-color: red;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
         # do predict with model
         prediction = model.predict(input_data)
 
