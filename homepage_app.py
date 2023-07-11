@@ -33,7 +33,7 @@ def main():
     # choose menu input - selectbox for symptoms
     math_score = st.slider('What is Your Math Score?', min_value=0, max_value=100)
     reading_score = st.slider('What is Your Reading Score?', min_value=0, max_value=100)
-    writing_score = st.slider('What is Your Writing Score?', min_value=0, max_value=100),
+    writing_score = st.slider('What is Your Writing Score?', min_value=0, max_value=100)
 
     # prediction - button for predict
     if st.button('Predict'):
