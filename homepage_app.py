@@ -54,15 +54,9 @@ def main():
         st.subheader('Prediction Result')
         
         if prediction[0] == 0:
-        st.markdown(
-            '<style>div.stButton > button:first-child {background-color: red !important; color: maroon !important;}</style>',
-            unsafe_allow_html=True)
-        st.success("You Didn't Pass The SAT Test!")
+            st.warning("You Didn't Pass The SAT Test!")
         else:
-        st.markdown(
-            '<style>div.stButton > button:first-child {background-color: green !important; color: darkgreen !important;}</style>',
-            unsafe_allow_html=True)
-        st.success("You Passed The SAT Test!")
+            st.success("You Passed The SAT Test!")
 
     
     st.write('----')
