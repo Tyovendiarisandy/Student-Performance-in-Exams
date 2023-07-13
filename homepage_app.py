@@ -10,7 +10,7 @@ from PIL import Image
 df = pd.read_csv('clean_dataset.csv')
 
 # load model
-model = pickle.load(open('xgb_fix_tuned.pkl','rb'))
+model = pickle.load(open('forest_fix_tuned.pkl','rb'))
     
 # create title (homepage)
 def main():
@@ -32,8 +32,7 @@ def main():
     
     # choose menu input - selectbox for symptoms
     math_score = st.slider('What is Your Math Score?', min_value=0, max_value=100)
-    reading_score = st.slider('What is Your Reading Score?', min_value=0, max_value=100)
-    writing_score = st.slider('What is Your Writing Score?', min_value=0, max_value=100)
+    ebrw_score = st.slider('What is Your Evidence-Based Reading and Writing Score?', min_value=0, max_value=100)
 
     # prediction - button for predict
     if st.button('Predict',help='Click to predict'):
@@ -46,18 +45,24 @@ def main():
         'lunch': [lunch],
         'test_preparation_course': [test_preparation_course],
         'math_score': [math_score],
-        'reading_score': [reading_score],
-        'writing_score': [writing_score]
+        'ebrw_score': [ebrw_score]
         })
         
         # do predict with model
         prediction = model.predict(input_data)
 
         st.subheader('Prediction Result')
+        
         if prediction[0] == 0:
-            st.success("You Didn't Pass The SAT Test!")
+        st.markdown(
+            '<style>div.stButton > button:first-child {background-color: red !important; color: maroon !important;}</style>',
+            unsafe_allow_html=True)
+        st.success("You Didn't Pass The SAT Test!")
         else:
-            st.success("You Passed The SAT Test!")
+        st.markdown(
+            '<style>div.stButton > button:first-child {background-color: green !important; color: darkgreen !important;}</style>',
+            unsafe_allow_html=True)
+        st.success("You Passed The SAT Test!")
 
     
     st.write('----')
